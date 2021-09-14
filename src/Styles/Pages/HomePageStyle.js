@@ -1,21 +1,22 @@
 import styled from 'styled-components'
 
-export const ContenerHomePage = styled.div`
+export const HomePageContainer = styled.div`
   display: flex;
   margin: 0;
-  max-width: 100%;
+  width: 100%;
   flex-direction: column;
   background-color: black;
   color: white;
   height: auto;
   overflow-x: hidden;
+  overflow-y: hidden;
 `
 
-export const AllList = styled.div`
+export const ListContainer = styled.div`
   display: flex;
-  width: 97%;
+  width: 100%;
   flex-direction: column;
-  height: 199vh;
+  height: 80%;
 `
 
 export const Footer = styled.div`
