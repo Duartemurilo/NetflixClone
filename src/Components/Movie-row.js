@@ -6,12 +6,10 @@ import NavigateNextSharpIcon from '@material-ui/icons/NavigateNextSharp'
 import { useHistory } from 'react-router-dom'
 import { goToWatchPage } from '../Routes/Path'
 
-const MovieRow = (props) => {
+const MovieRow = ({ moveData, req }) => {
   const history = useHistory()
 
   const [scrowX, setScrowX] = useState(-400)
-
-  const req = props.req
 
   const handleLeftMove = () => {
     let x = scrowX + Math.round(window.innerWidth / 2)
@@ -24,7 +22,7 @@ const MovieRow = (props) => {
   const handleRightMove = () => {
     let x = scrowX - Math.round(window.innerWidth / 2)
 
-    let listW = req.results?.length * 150
+    let listW = moveData.req.results?.length * 150
 
     if (window.innerWidth - listW > x) {
       x = window.innerWidth - listW
@@ -59,11 +57,11 @@ const MovieRow = (props) => {
 
   return (
     <div>
-      <Title>{props.title}</Title>
+      <Title>{moveData?.title}</Title>
 
       <ContenerMovieRow
         style={{
-          width: req.results?.length * 150,
+          width: moveData.results?.length * 150,
           marginLeft: scrowX,
         }}
       >
