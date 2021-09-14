@@ -37,21 +37,21 @@ const MovieRow = ({ moveData, req }) => {
 
   const MovieRowList = req?.results?.map((Move) => {
     return (
-      <div>
+      <>
         <MoveRowLeft onClick={handleLeftMove}>
           <NavigateBeforeSharpIcon style={{ fontSize: 50 }} />
         </MoveRowLeft>
-
-        <MoveRowRight onClick={handleRightMove}>
-          <NavigateNextSharpIcon style={{ fontSize: 50 }} />
-        </MoveRowRight>
 
         <ImageMove
           onClick={() => goToWatch(history, Move.id, Move.media_type)}
           src={`${UrlImg}${Move.poster_path}`}
           alt={Move.title}
         />
-      </div>
+
+        <MoveRowRight onClick={handleRightMove}>
+          <NavigateNextSharpIcon style={{ fontSize: 50 }} />
+        </MoveRowRight>
+      </>
     )
   })
 
@@ -61,7 +61,7 @@ const MovieRow = ({ moveData, req }) => {
 
       <ContenerMovieRow
         style={{
-          width: moveData.results?.length * 150,
+          width: req.results?.length * 150,
           marginLeft: scrowX,
         }}
       >
