@@ -6,9 +6,9 @@ export const ContainerHeaderNetflix = styled.div`
   justify-content: space-between;
   position: fixed;
   color: white;
-  width: 97%;
+  width: 100%;
   height: 100px;
-  background: transparent;
+  background-color: black;
   transition: all ease 0.7s;
 `
 export const Logo = styled.img`

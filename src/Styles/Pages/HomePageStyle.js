@@ -22,5 +22,5 @@ export const ListContainer = styled.div`
 export const Footer = styled.div`
   height: 20vh;
   text-align: center;
-  margin-top: 25vh;
+  margin-top: 10vh;
 `
