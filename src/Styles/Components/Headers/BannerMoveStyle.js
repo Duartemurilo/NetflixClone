@@ -12,22 +12,23 @@ export const Gradiente = styled.div`
 export const GradienteLeft = styled.div`
   width: inherit;
   height: inherit;
+  top: 0;
   background: linear-gradient(to right, black 20%, transparent 80%);
 `
 
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 50px;
+  justify-content: space-between;
   width: 40%;
-  height: 100%;
+  height: 60%;
+  margin-top: 100px;
+  h1 {
+    font-size: 50px;
+  }
 `
-export const TitleMove = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 20px;
-`
+
 export const DivInfo = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -45,17 +46,16 @@ export const Overview = styled.div`
   width: 90%;
 `
 
-export const ContenerBotton = styled.div`
+export const ContenerButton = styled.div`
   display: flex;
   margin-top: 5vh;
   align-items: center;
   width: 100%;
   height: 10vh;
   margin-top: 20vh;
-  margin-left: 4vw;
 `
 
-export const BottonWacth = styled.button`
+export const ButtonWacth = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ export const BottonWacth = styled.button`
   color: black;
   cursor: pointer;
 `
-export const BottonEp = styled.button`
+export const ButtonEp = styled.button`
   display: flex;
   font-size: 18px;
   cursor: pointer;

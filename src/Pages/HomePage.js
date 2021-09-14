@@ -6,15 +6,33 @@ import MovieRow from '../Components/Movie-row'
 import Header from '../Components/Headers/Header'
 import { ApiKey } from '../Constants/Url'
 import BannerMove from '../Components/Headers/BannerMove'
+import { AuthContext } from '../AuthContext'
+import { OrangeProfile, BlueProfile, RedProfile, GreenProfile } from '../Constants/UrlImg'
 
 const HomePage = () => {
   const [black, setBlack] = useState(false)
+  const { currentProfile } = React.useContext(AuthContext)
 
-  const Feature = UseRequestData(`movie/451048?language=pt-BR&api_key=${ApiKey}`)
+  const idFeature = () => {
+    let id = 451048
+    if (currentProfile === BlueProfile) {
+      id = 595743
+    } else if (currentProfile === RedProfile) {
+      id = 451048
+    } else if (currentProfile === GreenProfile) {
+      id = 593910
+    } else if (currentProfile === OrangeProfile) {
+      id = 508943
+    }
+
+    return id
+  }
+
+  const idMove = idFeature()
+
+  const Feature = UseRequestData(`movie/${idMove}?language=pt-BR&api_key=${ApiKey}`)
 
   const listMovie = ListMovie()
-
-  console.log(listMovie)
 
   const list = listMovie?.map((move) => {
     return (
