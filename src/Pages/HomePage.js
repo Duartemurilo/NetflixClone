@@ -11,8 +11,8 @@ const HomePage = () => {
 
   const list = listMovie?.map((move) => {
     return (
-      <div>
-        <MovieRow title={move.title} req={move.req} />
+      <div key={move.slug}>
+        <MovieRow moveData={move} req={move.req} />
       </div>
     )
   })
