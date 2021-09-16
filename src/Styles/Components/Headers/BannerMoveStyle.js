@@ -12,7 +12,6 @@ export const Gradiente = styled.div`
 export const GradienteLeft = styled.div`
   width: inherit;
   height: inherit;
-  top: 0;
   background: linear-gradient(to right, black 20%, transparent 80%);
 `
 
@@ -23,9 +22,9 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   width: 40%;
   height: 60%;
-  margin-top: 100px;
   h1 {
     font-size: 50px;
+    margin-top: 100px;
   }
 `
 
@@ -48,7 +47,6 @@ export const Overview = styled.div`
 
 export const ContenerButton = styled.div`
   display: flex;
-  margin-top: 5vh;
   align-items: center;
   width: 100%;
   height: 10vh;
@@ -83,8 +81,4 @@ export const ButtonEp = styled.button`
   align-items: center;
   color: white;
   border: 2px solid white;
-`
-
-export const InfoText = styled.p`
-  margin-left: 5px;
 `
