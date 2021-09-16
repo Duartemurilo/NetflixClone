@@ -1,32 +1,34 @@
 import React, { useState } from 'react'
 import {
-  Button,
   ConteneirButtons,
   ContenerWacthPage,
-  DivIndiomas,
   DivInfo,
   DivLanguage,
-  DivLegendas,
   Gradiente,
   GradienteLeft,
   HeaderInfoContainer,
   InfoContainer,
   Overview,
-  TxtLanguage,
 } from '../../Styles/Cards/CardsDetail'
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
-import PlayArrowIcon from '@material-ui/icons/PlayArrow'
-import VideoLibrarySharp from '@material-ui/icons/VideoLibrarySharp'
-import SubtitlesIcon from '@material-ui/icons/Subtitles'
+import ButtonsCard from '../Cards/Button'
 
 const CardDetailTv = ({ data, type }) => {
   const [currentOpacity, setCurrentOpacity] = useState(false)
 
   const handleLanguage = () => {
-    setCurrentOpacity(true)
-  }
-  const handlePortugues = () => {
     setCurrentOpacity(false)
+  }
+
+  let soma = 0
+  const handleOptionLanguage = () => {
+    soma++
+
+    if (soma === 1) {
+      setCurrentOpacity(true)
+    } else {
+      soma = 0
+      setCurrentOpacity(false)
+    }
   }
   const firstDateMovie = new Date(data.release_date)
   const tempoMinutos = data.runtime
@@ -71,35 +73,24 @@ const CardDetailTv = ({ data, type }) => {
                   <p>{data.overview}</p>
                 </Overview>
                 <ConteneirButtons>
-                  <Button>
-                    <ThumbUpAltIcon />
-                    <p style={{ marginLeft: '1vh' }}>Classificar este Titulo</p>
-                  </Button>
-                  <Button>
-                    <PlayArrowIcon />
-                    <p style={{ marginLeft: '1vh' }}>Temporada 1 ep 1</p>
-                  </Button>
-                  <Button>
-                    <VideoLibrarySharp />
-                    <p style={{ marginLeft: '1vh' }}>Episodiose mais </p>
-                  </Button>
-                  <Button onClick={handleLanguage}>
-                    <SubtitlesIcon />
-                    <p style={{ marginLeft: '1vh' }}>Indioma e legendas </p>
-                  </Button>
+                  <ButtonsCard type="rank" />
+                  <ButtonsCard type="temporadas" />
+                  <ButtonsCard type="episodios" />
+                  <ButtonsCard type="idiomas" handleLanguage={() => setCurrentOpacity(true)} />
                 </ConteneirButtons>
+
                 {currentOpacity && (
                   <DivLanguage>
-                    <DivIndiomas>
-                      <p style={{ color: 'white' }}>Indioma</p>
-                      <TxtLanguage onClick={handlePortugues}>Portugues</TxtLanguage>
-                      <TxtLanguage onClick={handlePortugues}>ingles</TxtLanguage>
-                    </DivIndiomas>
-                    <DivLegendas>
+                    <div style={{ border: 'none' }}>
+                      <p style={{ color: 'white' }}>Idioma</p>
+                      <p onClick={handleLanguage}>Portugues</p>
+                      <p onClick={handleLanguage}>ingles</p>
+                    </div>
+                    <div>
                       <p style={{ color: 'white' }}>Legendas</p>
-                      <TxtLanguage onClick={handlePortugues}>Portugues</TxtLanguage>
-                      <TxtLanguage onClick={handlePortugues}>ingles</TxtLanguage>
-                    </DivLegendas>
+                      <p onClick={handleLanguage}>Portugues</p>
+                      <p onClick={handleLanguage}>ingles</p>
+                    </div>
                   </DivLanguage>
                 )}
               </InfoContainer>
@@ -137,34 +128,22 @@ const CardDetailTv = ({ data, type }) => {
                   <p>{data.overview}</p>
                 </Overview>
                 <ConteneirButtons>
-                  <Button>
-                    <ThumbUpAltIcon />
-                    <p style={{ marginLeft: '1vh' }}>Classificar este Titulo</p>
-                  </Button>
-                  <Button>
-                    <PlayArrowIcon />
-                    <p style={{ marginLeft: '1vh' }}>Assitir</p>
-                  </Button>
-                  <Button>
-                    <VideoLibrarySharp />
-                    <p style={{ marginLeft: '1vh' }}>Episodis e mais </p>
-                  </Button>
-                  <Button onClick={handleLanguage}>
-                    <SubtitlesIcon />
-                    <p style={{ marginLeft: '1vh' }}>Indioma e legendas </p>
-                  </Button>
+                  <ButtonsCard type="rank" />
+                  <ButtonsCard type="assistir" />
+                  <ButtonsCard type="episodios" />
+                  <ButtonsCard type="idiomas" handleLanguage={handleOptionLanguage} />
                   {currentOpacity && (
                     <DivLanguage>
-                      <DivIndiomas>
-                        <p style={{ color: 'white' }}>Indioma</p>
-                        <TxtLanguage onClick={handlePortugues}>Portugues</TxtLanguage>
-                        <TxtLanguage onClick={handlePortugues}>ingles</TxtLanguage>
-                      </DivIndiomas>
-                      <DivLegendas>
+                      <div style={{ border: 'none' }}>
+                        <p style={{ color: 'white' }}>Idioma</p>
+                        <p onClick={handleLanguage}>Portugues</p>
+                        <p onClick={handleLanguage}>ingles</p>
+                      </div>
+                      <div>
                         <p style={{ color: 'white' }}>Legendas</p>
-                        <TxtLanguage onClick={handlePortugues}>Portugues</TxtLanguage>
-                        <TxtLanguage onClick={handlePortugues}>ingles</TxtLanguage>
-                      </DivLegendas>
+                        <p onClick={handleLanguage}>Portugues</p>
+                        <p onClick={handleLanguage}>ingles</p>
+                      </div>
                     </DivLanguage>
                   )}
                 </ConteneirButtons>
