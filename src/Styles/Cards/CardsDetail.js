@@ -101,6 +101,9 @@ export const ConteneirButtons = styled.div`
 
 export const Button = styled.div`
   display: flex;
+  p {
+    margin-left: 1vw;
+  }
   align-items: center;
   margin-top: 1vh;
   height: 5vh;
@@ -114,39 +117,30 @@ export const Button = styled.div`
 `
 export const DivLanguage = styled.div`
   display: flex;
-
-  margin-top: 28vh;
+  margin-left: 40vw;
   background-color: #403f3e;
   position: absolute;
   height: auto;
   font-size: 20px;
   border-radius: 10px;
   width: 30vw;
-  cursor: pointer;
   transition: all ease 1s;
-`
-
-export const DivIndiomas = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 18px;
-  width: 50%;
-  height: 100%;
-  color: #acadac;
-`
-export const DivLegendas = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 18px;
-  width: 50%;
-  height: 100%;
-  color: #acadac;
-`
-export const TxtLanguage = styled.p`
-  :hover {
-    color: white;
-    font-size: 22px;
+  background-color: rgba(0, 3, 0, 0.7);
+  p {
+    :hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    border-left: 1px solid white;
+    width: 50%;
+    height: 100%;
+    color: #acadac;
+    opacity: 1;
   }
 `
