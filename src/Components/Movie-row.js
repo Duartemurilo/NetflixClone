@@ -22,10 +22,10 @@ const MovieRow = ({ moveData, req }) => {
   const handleRightMove = () => {
     let x = scrowX - Math.round(window.innerWidth / 2)
 
-    let listW = moveData.req.results?.length * 150
+    let widhtList = req.results?.length * 150
 
-    if (window.innerWidth - listW > x) {
-      x = window.innerWidth - listW
+    if (window.innerWidth - widhtList > x) {
+      x = window.innerWidth - widhtList
     }
 
     setScrowX(x)

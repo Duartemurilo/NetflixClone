@@ -1,7 +1,8 @@
 import React from 'react'
 import HomePage from '../Pages/HomePage'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import PerfilPage from '../Pages/PerfilPage'
+import ProfilePage from '../Pages/ProfilePage'
+import WatchPage from '../Pages/WatchPage'
 
 const Router = () => {
   return (
@@ -11,7 +12,10 @@ const Router = () => {
           <HomePage />
         </Route>
         <Route exact path={'/PerfilPage'}>
-          <PerfilPage />
+          <ProfilePage />
+        </Route>
+        <Route exact path={'/Watch/:details/:type'}>
+          <WatchPage />
         </Route>
       </Switch>
     </BrowserRouter>

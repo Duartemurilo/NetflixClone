@@ -8,7 +8,7 @@ export const ContainerHeaderNetflix = styled.div`
   color: white;
   width: 100%;
   height: 100px;
-  background-color: black;
+  background-color: transparent;
   transition: all ease 0.7s;
 `
 export const Logo = styled.img`
