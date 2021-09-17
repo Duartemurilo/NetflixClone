@@ -4,16 +4,18 @@
 
 <h1 align="center">Netflix Clone</h1>
 
-<p align="center">
- <a href="#objetivo">Objetivo</a> • 
- <a href="#autor">Autor</a>
-</p>
+ <ul >
+  <li><a href="#objetivo">Objetivo</a></li>
+  <li><a href="#tec"> 🛠  Tecnologias</a></li>
+  <li><a href="#autor">✏️ Autor</a></li>
+  <li><a href="#web">🎨 Layout</a></li>
+ </ul>
 
 <h1>💻  Sobre o projeto</h1>
 
 <p> 💳  Projeto que tem o objetivo de clonar algumas paginas do netflix com o intuito de desenvolver abilidades tecnicas, pricipalmente manipulação de APIs e estilizaçåo .</p>
 
-<h1>🛠 Tecnologias </h1
+<h1 id = 'tec'>🛠 Tecnologias </h1
   
 <ul>
   <li>React Router</li>
@@ -26,8 +28,7 @@
 
 <h4>finalizado ✅ </h4>
 
-<h1>🎨 Layout</h1>
-
+<h1 id = 'Web'>🎨 Layout</h1>
 <h3>WEB</h3>
 
 <p align="center">
