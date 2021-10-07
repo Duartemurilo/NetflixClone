@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { ContenerMovieRow, ImageMove, MoveRowLeft, MoveRowRight, Title } from '../Styles/Components/Movie-RowStyle'
 import { UrlImg } from '../Constants/UrlImg'
-import NavigateBeforeSharpIcon from '@material-ui/icons/NavigateBeforeSharp'
-import NavigateNextSharpIcon from '@material-ui/icons/NavigateNextSharp'
 import { useHistory } from 'react-router-dom'
 import { goToWatchPage } from '../Routes/Path'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 
 const MovieRow = ({ moveData, req }) => {
   const history = useHistory()
@@ -39,7 +39,7 @@ const MovieRow = ({ moveData, req }) => {
     return (
       <>
         <MoveRowLeft onClick={handleLeftMove}>
-          <NavigateBeforeSharpIcon style={{ fontSize: 50 }} />
+          <ArrowBackIosIcon style={{ fontSize: 50 }} />
         </MoveRowLeft>
 
         <ImageMove
@@ -49,7 +49,7 @@ const MovieRow = ({ moveData, req }) => {
         />
 
         <MoveRowRight onClick={handleRightMove}>
-          <NavigateNextSharpIcon style={{ fontSize: 50 }} />
+          <NavigateNextIcon style={{ fontSize: 50 }} />
         </MoveRowRight>
       </>
     )

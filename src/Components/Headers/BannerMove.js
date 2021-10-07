@@ -1,7 +1,7 @@
 import React from 'react'
 
-import PlayArrowIcon from '@material-ui/icons/PlayArrow'
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import { goToWatchPage } from '../../Routes/Path'
 import { useHistory } from 'react-router-dom'
 import {
