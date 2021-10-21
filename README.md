@@ -32,8 +32,14 @@
 <h3>WEB</h3>
 
 <p align="center">
- <img widht = '500'  src = "./src/Assents/gravacaoNetflix.gif"/>
+ <img widht = '400'  src = "./src/Assents/GravacaoWebNetflix.gif"/>
 </p>
+<h3>MOBILE</h3>
+
+<p align="center">
+ <img height = '450'  src = "./src/Assents/GravacaoMobileNetflix.gif"/>
+</p>
+
 
 <h1>🚀  Como executar o projeto</h1>
 
