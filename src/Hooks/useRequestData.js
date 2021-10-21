@@ -7,15 +7,33 @@ export function UseRequestData(endPoint) {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios
-      .get(`${BaseUrl}${endPoint}`)
+    let cancel
+
+    axios({
+      method: 'GET',
+      url: `${BaseUrl}${endPoint}`,
+      cancelToken: new axios.CancelToken((c) => (cancel = c)),
+    })
       .then((res) => {
         setData(res.data)
       })
-      .catch((err) => {
-        console.log(err)
+      .catch((e) => {
+        if (axios.isCancel(e)) return
       })
+
+    return () => cancel()
   }, [endPoint])
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`${BaseUrl}${endPoint}`)
+  //     .then((res) => {
+  //       setData(res.data)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }, [endPoint])
 
   return data
 }
@@ -39,7 +57,7 @@ export const ListMovie = () => {
     },
     {
       slug: 'action',
-      title: 'Acao',
+      title: 'Açåo',
       req: UseRequestData(`discover/movie?with-genres=28?language=pt-BR&api_key=${ApiKey}`),
     },
     {

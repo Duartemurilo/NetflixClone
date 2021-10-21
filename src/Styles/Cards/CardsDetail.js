@@ -1,10 +1,10 @@
 import styled from 'styled-components'
+import breakPoints from '../../Constants/breakPoints'
 
 export const ContenerWacthPage = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  background-color: black;
   color: white;
   height: 100vh;
   img {
@@ -14,12 +14,44 @@ export const ContenerWacthPage = styled.div`
     margin-bottom: 0%;
     width: 3vw;
   }
+
+  ${`@media only screen and ${breakPoints.device.cel}{
+  height: 50vh; 
+  width: 98%;
+  }`}
+`
+export const HeaderInfoContainer = styled.div`
+  display: flex;
+  height: 10vh;
+  align-items: center;
+
+  p {
+    margin-left: 15px;
+    margin-top: 6vh;
+  }
+  ${`@media only screen and ${breakPoints.device.cel}{
+   
+   height: 10vh;
+   img{
+     width:50px;
+     object-fit: cover;
+   }
+   p {
+    margin-left: 0px;
+    margin-top: 6vh;
+  }
+  }
+  }`}
 `
 
 export const Gradiente = styled.div`
   width: inherit;
   height: inherit;
   background: linear-gradient(to top, black 8%, transparent 92%);
+  ${`@media only screen and ${breakPoints.device.cel}{
+   width: 100%;
+  
+  }`}
 `
 export const GradienteLeft = styled.div`
   width: inherit;
@@ -30,32 +62,38 @@ export const GradienteLeft = styled.div`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding-left: 50px;
   width: 50%;
-  height: 70vh;
+  height: 50vh;
+  gap: 10px;
   h1 {
-    font-family: Zapf-Chancery;
     font-size: 45px;
     font-weight: bold;
   }
-`
-
-export const HeaderInfoContainer = styled.div`
-  display: flex;
-  height: 15vh;
-  align-items: center;
-  p {
-    margin-left: 15px;
-    margin-top: 6vh;
+  h2 {
+    font-size: 13px;
+    font-weight: bold;
   }
-`
-export const TitleMove = styled.div`
-  display: flex;
-  font-family: Zapf-Chancery;
-  width: 70vw;
-  font-size: 4vw;
-  margin-left: 25vw;
-  margin-top: 2vh;
+
+  ${`@media only screen and ${breakPoints.device.cel}{
+
+   width: 100%;
+   padding: 0px;
+   padding-left: 20px;
+ 
+   h1 {
+
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:30vh;
+    width:90%;
+  }
+  h2{
+
+    font-size: 13px;
+    font-weight: bold;
+  }
+  }`}
 `
 
 export const DivInfo = styled.div`
@@ -64,9 +102,8 @@ export const DivInfo = styled.div`
   height: 6vh;
   font-size: 15px;
   color: white;
-  margin-top: 2vh;
-  margin-right: 280px;
   align-items: center;
+
   div {
     border-radius: 4px;
     display: flex;
@@ -82,13 +119,30 @@ export const DivInfo = styled.div`
     font-size: 15px;
   }
   width: 50%;
+  ${`@media only screen and ${breakPoints.device.cel}{
+ 
+  width: 70%;
+    div{
+      display:flex;
+      width: 7vw;
+    }
+}`}
 `
 
 export const Overview = styled.div`
-  margin-top: 15px;
+  margin-top: -8px;
   height: auto;
   font-size: 20px;
   width: 90%;
+
+  ${`@media only screen and ${breakPoints.device.cel}{
+     
+     margin-top: 0px;
+     display: flex;
+     height: 100%;
+     max-height: 90%;
+     font-size: 15px;
+  }`}
 `
 export const ConteneirButtons = styled.div`
   display: flex;
@@ -144,3 +198,4 @@ export const DivLanguage = styled.div`
     opacity: 1;
   }
 `
+export const FullInfoContainer = styled.div``

@@ -36,8 +36,8 @@ const HomePage = () => {
 
   const list = listMovie?.map((move) => {
     return (
-      <div>
-        <MovieRow title={move.title} req={move.req} />
+      <div key={move.id}>
+        <MovieRow title={move.title} req={move.req} move={move} />
       </div>
     )
   })
