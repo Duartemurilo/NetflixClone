@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { AuthContext } from '../../AuthContext'
 import {
   ConteneirButtons,
   ContenerWacthPage,
   DivInfo,
   DivLanguage,
+  FullInfoContainer,
   Gradiente,
   GradienteLeft,
   HeaderInfoContainer,
@@ -14,6 +16,7 @@ import ButtonsCard from '../Cards/Button'
 
 const CardDetailTv = ({ data, type }) => {
   const [currentOpacity, setCurrentOpacity] = useState(false)
+  const { setHeightWatchPage } = React.useContext(AuthContext)
 
   const handleLanguage = () => {
     setCurrentOpacity(false)
@@ -39,6 +42,8 @@ const CardDetailTv = ({ data, type }) => {
 
   const firstDateTv = new Date(data.last_air_date)
 
+  data.overview?.length > 500 ? setHeightWatchPage('150vh') : setHeightWatchPage('115vh')
+
   return (
     <>
       {type === 'tvdata' ? (
@@ -61,17 +66,19 @@ const CardDetailTv = ({ data, type }) => {
                 </HeaderInfoContainer>
 
                 <h1>{data.name}</h1>
-                <DivInfo>
-                  <p style={{ color: 'green' }}>{data.vote_average} pontos</p>
-                  <p>{firstDateTv.getFullYear()}</p>
-                  <p>{data.number_of_seasons} Temporadas</p>
-                  <div>
-                    <h1>HD</h1>
-                  </div>
-                </DivInfo>
-                <Overview>
-                  <p>{data.overview}</p>
-                </Overview>
+                <FullInfoContainer>
+                  <DivInfo>
+                    <p style={{ color: 'green' }}>{data.vote_average} pontos</p>
+                    <p>{firstDateTv.getFullYear()}</p>
+                    <p>{data.number_of_seasons} Temporadas</p>
+                    <div>
+                      <h2>HD</h2>
+                    </div>
+                  </DivInfo>
+                  <Overview>
+                    <p>{data.overview}</p>
+                  </Overview>
+                </FullInfoContainer>
                 <ConteneirButtons>
                   <ButtonsCard type="rank" />
                   <ButtonsCard type="temporadas" />
@@ -121,7 +128,7 @@ const CardDetailTv = ({ data, type }) => {
                   <p>{firstDateMovie.getFullYear()}</p>
                   <p> {fuulTime} hr</p>
                   <div>
-                    <h1>HD</h1>
+                    <h2>HD</h2>
                   </div>
                 </DivInfo>
                 <Overview>

@@ -34,7 +34,7 @@ const ButtonsCard = ({ type, handleLanguage }) => {
         return (
           <Button onClick={handleLanguage}>
             <SubtitlesIcon />
-            <p>Indioma e legendas </p>
+            <p>Idiomas e legendas </p>
           </Button>
         )
       case 'assistir':

@@ -5,6 +5,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import { goToWatchPage } from '../../Routes/Path'
 import { useHistory } from 'react-router-dom'
 import {
+  BodyBanner,
   ButtonEp,
   ButtonWacth,
   ContenerButton,
@@ -14,47 +15,52 @@ import {
   InfoContainer,
   Overview,
 } from '../../Styles/Components/Headers/BannerMoveStyle'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const BannerMove = ({ dataFeature }) => {
   const firstDate = new Date(dataFeature.release_date)
   const history = useHistory()
+  const isActive = useMediaQuery('(max-width: 450px)')
 
   return (
-    <div
+    <BodyBanner
       style={{
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
         backgroundImage: `url(https://image.tmdb.org/t/p/original${dataFeature.backdrop_path})`,
-        height: '100vh',
       }}
     >
       <Gradiente>
         <GradienteLeft>
           <InfoContainer>
-            <h1>{dataFeature.title}</h1>
+            <div id="ContainerDataFeature">
+              <h1>{dataFeature.title}</h1>
 
-            <DivInfo>
-              <p>{dataFeature.vote_average} pontos</p>
-              <p style={{ color: 'white' }}>{firstDate.getFullYear()}</p>
-            </DivInfo>
+              <DivInfo>
+                <p>{dataFeature.vote_average} pontos</p>
+                <p style={{ color: 'white' }}>{firstDate.getFullYear()}</p>
+              </DivInfo>
 
-            <Overview>
-              <p>{dataFeature.overview}</p>
-            </Overview>
+              {isActive ? (
+                <div></div>
+              ) : (
+                <Overview>
+                  <p>{dataFeature.overview}</p>
+                </Overview>
+              )}
 
-            <ContenerButton>
-              <ButtonWacth onClick={() => goToWatchPage(history, dataFeature.id, 'movie')}>
-                <PlayArrowIcon />
-                <p>Assitir ao episodio</p>
-              </ButtonWacth>
-              <ButtonEp>
-                <InfoOutlinedIcon /> <p style={{ marginLeft: '5px' }}>Mais Informações</p>
-              </ButtonEp>
-            </ContenerButton>
+              <ContenerButton>
+                <ButtonWacth onClick={() => goToWatchPage(history, dataFeature.id, 'movie')}>
+                  <PlayArrowIcon />
+                  <p>Assitir</p>
+                </ButtonWacth>
+                <ButtonEp>
+                  <InfoOutlinedIcon /> <p style={{ marginLeft: '5px' }}>Mais Informações</p>
+                </ButtonEp>
+              </ContenerButton>
+            </div>
           </InfoContainer>
         </GradienteLeft>
       </Gradiente>
-    </div>
+    </BodyBanner>
   )
 }
 
