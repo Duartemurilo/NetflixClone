@@ -1,6 +1,6 @@
 const size = {
-  celMin: '300px',
-  celMax: '450px',
+  celMin: '250px',
+  celMax: '700px',
 }
 
 const device = {
