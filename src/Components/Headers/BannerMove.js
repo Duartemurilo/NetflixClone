@@ -28,38 +28,69 @@ const BannerMove = ({ dataFeature }) => {
         backgroundImage: `url(https://image.tmdb.org/t/p/original${dataFeature.backdrop_path})`,
       }}
     >
-      <Gradiente>
-        <GradienteLeft>
-          <InfoContainer>
-            <div id="ContainerDataFeature">
-              <h1>{dataFeature.title}</h1>
+      {isActive ? (
+        <InfoContainer>
+          <div id="ContainerDataFeature">
+            <h1>{dataFeature.title}</h1>
 
-              <DivInfo>
-                <p>{dataFeature.vote_average} pontos</p>
-                <p style={{ color: 'white' }}>{firstDate.getFullYear()}</p>
-              </DivInfo>
+            <DivInfo>
+              <p>{dataFeature.vote_average} pontos</p>
+              <p style={{ color: 'white' }}>{firstDate.getFullYear()}</p>
+            </DivInfo>
 
-              {isActive ? (
-                <div></div>
-              ) : (
-                <Overview>
-                  <p>{dataFeature.overview}</p>
-                </Overview>
-              )}
+            {isActive ? (
+              <div></div>
+            ) : (
+              <Overview>
+                <p>{dataFeature.overview}</p>
+              </Overview>
+            )}
 
-              <ContenerButton>
-                <ButtonWacth onClick={() => goToWatchPage(history, dataFeature.id, 'movie')}>
-                  <PlayArrowIcon />
-                  <p>Assitir</p>
-                </ButtonWacth>
-                <ButtonEp>
-                  <InfoOutlinedIcon /> <p style={{ marginLeft: '5px' }}>Mais Informações</p>
-                </ButtonEp>
-              </ContenerButton>
-            </div>
-          </InfoContainer>
-        </GradienteLeft>
-      </Gradiente>
+            <ContenerButton>
+              <ButtonWacth onClick={() => goToWatchPage(history, dataFeature.id, 'movie')}>
+                <PlayArrowIcon />
+                <p>Assitir</p>
+              </ButtonWacth>
+              <ButtonEp>
+                <InfoOutlinedIcon /> <p style={{ marginLeft: '5px' }}>Mais Informações</p>
+              </ButtonEp>
+            </ContenerButton>
+          </div>
+        </InfoContainer>
+      ) : (
+        <Gradiente>
+          <GradienteLeft>
+            <InfoContainer>
+              <div id="ContainerDataFeature">
+                <h1>{dataFeature.title}</h1>
+
+                <DivInfo>
+                  <p>{dataFeature.vote_average} pontos</p>
+                  <p style={{ color: 'white' }}>{firstDate.getFullYear()}</p>
+                </DivInfo>
+
+                {isActive ? (
+                  <div></div>
+                ) : (
+                  <Overview>
+                    <p>{dataFeature.overview}</p>
+                  </Overview>
+                )}
+
+                <ContenerButton>
+                  <ButtonWacth onClick={() => goToWatchPage(history, dataFeature.id, 'movie')}>
+                    <PlayArrowIcon />
+                    <p>Assitir</p>
+                  </ButtonWacth>
+                  <ButtonEp>
+                    <InfoOutlinedIcon /> <p style={{ marginLeft: '5px' }}>Mais Informações</p>
+                  </ButtonEp>
+                </ContenerButton>
+              </div>
+            </InfoContainer>
+          </GradienteLeft>
+        </Gradiente>
+      )}
     </BodyBanner>
   )
 }
