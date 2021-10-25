@@ -10,6 +10,7 @@ export const BodyPerfilPage = styled.div`
   background-color: black;
   height: 100vh;
   color: white;
+  overflow: hidden;
 `
 export const TextoPerfil = styled.div`
   display: flex;
@@ -21,9 +22,9 @@ export const TextoPerfil = styled.div`
   width: 45%;
   height: 8vh;
   ${`@media only screen and ${BreakPoints.device.cel}{
-    width: 60vw;
+    width: 80vw;
     margin-top: 5vh;
-    font-size: 18px;
+    font-size: 25px;
   }`}
 `
 
@@ -34,11 +35,11 @@ export const ConteneirPerfis = styled.div`
   height: 18vh;
 
   ${`@media only screen and ${BreakPoints.device.cel}{
-  flex-direction: column;
+   margin-bottom: 3vh;
     height: 40vh;
     gap:20px;
     justify-content: center;
-    width: 70%;
+    width: 80%;
     flex-wrap: wrap;
     div{
       display: flex;
@@ -61,7 +62,7 @@ export const ImgPerfis = styled.img`
   }
   ${`@media only screen and ${BreakPoints.device.cel}{
     object-fit: contain;
-    width: 100px;
+    width: 90px;
     height: 100px;
   }`}
 `
@@ -86,6 +87,6 @@ export const ButtonPerfis = styled.button`
   ${`@media only screen and ${BreakPoints.device.cel}{
     width: 60vw;
     margin-top: 5vh;
-    font-size: 18px;
+    font-size: 16px;
   }`}
 `
