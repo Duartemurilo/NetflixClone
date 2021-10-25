@@ -42,7 +42,7 @@ export const InfoContainer = styled.div`
       width: 100%;
       height: 90%;
       padding-left: 0px;
-      
+     
       h1 {
         font-size: 35px;
         margin-bottom: 0px;
