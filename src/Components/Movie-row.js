@@ -1,12 +1,5 @@
 import React, { useState } from 'react'
-import {
-  BodyMovieRow,
-  ContenerMovieRow,
-  ImageMove,
-  MoveRowLeft,
-  MoveRowRight,
-  Title,
-} from '../Styles/Components/Movie-RowStyle'
+import { BodyMovieRow, ContenerMovieRow, MoveRowLeft, MoveRowRight, Title } from '../Styles/Components/Movie-RowStyle'
 import { UrlImg } from '../Constants/UrlImg'
 import { useHistory } from 'react-router-dom'
 import { goToWatchPage } from '../Routes/Path'
@@ -66,17 +59,22 @@ const MovieRow = ({ req, title, move }) => {
         )}
 
         {move.slug === 'Originais' ? (
-          <ImageMove
-            style={{ height: '35vh', width: '200px' }}
+          <img
+            style={{ height: '35vh', width: '200px', objectFit: 'cover', cursor: 'pointer' }}
             onClick={() => goToWatch(history, Move.id, Move.media_type)}
             src={`${UrlImg}${Move.poster_path}`}
             alt={Move.title}
+            height="35vh"
+            width="200px"
+            effect="blur"
           />
         ) : (
-          <ImageMove
+          <img
+            style={{ height: '120px', width: '150px', objectFit: 'cover', cursor: 'pointer' }}
             onClick={() => goToWatch(history, Move.id, Move.media_type)}
             src={`${UrlImg}${Move.poster_path}`}
             alt={Move.title}
+            effect="blur"
           />
         )}
         {move.slug === 'Originais' ? (

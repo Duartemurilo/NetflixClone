@@ -13,6 +13,7 @@ export const BodyMovieRow = styled.div`
 export const ContenerMovieRow = styled.div`
   display: flex;
   text-align: center;
+  gap: 0.7vw;
   :hover {
     div {
       opacity: 1;
@@ -53,24 +54,6 @@ export const MoveRowRight = styled.div`
     height: 120px;
     overflow-x: hidden;
   }`}
-`
-
-export const ImageMove = styled.img`
-  width: 150px;
-  object-fit: cover;
-  height: 120px;
-
-  cursor: pointer;
-  transform: scale(0.94);
-  transition: all ease 0.2s;
-
-  :hover {
-    transform: scale(1);
-  }
-  ${`@media only screen and ${breakPoints.device.cel}{
-   width: 300px;
-   height: 120px;
-}`}
 `
 
 export const Title = styled.div`
