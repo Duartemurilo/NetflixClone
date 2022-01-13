@@ -9,7 +9,7 @@ import { goToWatchPage } from '../Routes/Path'
 const MovieRow = ({ moveData, req }) => {
   const history = useHistory()
 
-  const [scrowX, setScrowX] = useState(-400)
+  const [scrowX, setScrowX] = useState(-399)
 
   const handleLeftMove = () => {
     let x = scrowX + Math.round(window.innerWidth / 2)
