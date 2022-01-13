@@ -5,6 +5,10 @@ export const AuthContext = React.createContext([])
 
 export const AuthProvider = (props) => {
   const [currentProfile, setCurrentProfile] = useState(RedProfile)
-
-  return <AuthContext.Provider value={{ currentProfile, setCurrentProfile }}>{props.children}</AuthContext.Provider>
+  const [heightWatchPage, setHeightWatchPage] = useState('100vh')
+  return (
+    <AuthContext.Provider value={{ currentProfile, setCurrentProfile, heightWatchPage, setHeightWatchPage }}>
+      {props.children}
+    </AuthContext.Provider>
+  )
 }

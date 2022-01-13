@@ -3,13 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 import { BlueProfile, RedProfile, GreenProfile, OrangeProfile } from '../Constants/UrlImg'
 import { goToHomePage } from '../Routes/Path'
-import {
-  ButtonPerfis,
-  ConteneirPerfis,
-  ContenerPerfilPage,
-  ImgPerfis,
-  TextoPerfil,
-} from '../Styles/Pages/PerfilPageStyled'
+import { ButtonPerfis, ConteneirPerfis, BodyPerfilPage, ImgPerfis, TextoPerfil } from '../Styles/Pages/PerfilPageStyled'
 
 const PerfilPage = () => {
   const { setCurrentProfile } = React.useContext(AuthContext)
@@ -22,7 +16,7 @@ const PerfilPage = () => {
   const history = useHistory()
 
   return (
-    <ContenerPerfilPage>
+    <BodyPerfilPage>
       <TextoPerfil>Quem esta assitindo?</TextoPerfil>
       <ConteneirPerfis>
         <div>
@@ -43,7 +37,7 @@ const PerfilPage = () => {
         </div>
       </ConteneirPerfis>
       <ButtonPerfis>GERENCIAR PERFIS</ButtonPerfis>
-    </ContenerPerfilPage>
+    </BodyPerfilPage>
   )
 }
 

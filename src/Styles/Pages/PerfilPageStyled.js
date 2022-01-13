@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import BreakPoints from '../../Constants/breakPoints'
 
-export const ContenerPerfilPage = styled.div`
+export const BodyPerfilPage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +10,7 @@ export const ContenerPerfilPage = styled.div`
   background-color: black;
   height: 100vh;
   color: white;
+  overflow: hidden;
 `
 export const TextoPerfil = styled.div`
   display: flex;
@@ -19,6 +21,11 @@ export const TextoPerfil = styled.div`
   margin-bottom: 7vh;
   width: 45%;
   height: 8vh;
+  ${`@media only screen and ${BreakPoints.device.cel}{
+    width: 80vw;
+    margin-top: 5vh;
+    font-size: 25px;
+  }`}
 `
 
 export const ConteneirPerfis = styled.div`
@@ -26,6 +33,21 @@ export const ConteneirPerfis = styled.div`
   justify-content: space-evenly;
   width: 60%;
   height: 18vh;
+
+  ${`@media only screen and ${BreakPoints.device.cel}{
+   margin-bottom: 3vh;
+    height: 40vh;
+    gap:20px;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }`}
 `
 export const ImgPerfis = styled.img`
   object-fit: cover;
@@ -38,6 +60,11 @@ export const ImgPerfis = styled.img`
     transform: scale(1.1);
     border: 2px solid white;
   }
+  ${`@media only screen and ${BreakPoints.device.cel}{
+    object-fit: contain;
+    width: 90px;
+    height: 100px;
+  }`}
 `
 
 export const ButtonPerfis = styled.button`
@@ -57,4 +84,9 @@ export const ButtonPerfis = styled.button`
     border: 1px solid white;
     transform: scale(1.1);
   }
+  ${`@media only screen and ${BreakPoints.device.cel}{
+    width: 60vw;
+    margin-top: 5vh;
+    font-size: 16px;
+  }`}
 `

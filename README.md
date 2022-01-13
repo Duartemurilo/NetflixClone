@@ -13,7 +13,7 @@
 
 <h1>💻  Sobre o projeto</h1>
 
-<p> 💳  Projeto que tem o objetivo de clonar algumas paginas do netflix com o intuito de desenvolver abilidades tecnicas, pricipalmente manipulação de APIs e estilizaçåo .</p>
+<p> 💳  Projeto que tem o objetivo de clonar algumas paginas do netflix com o intuito de desenvolver habilidades técnicas, principalmente manipulação de APIs e estilização.</p>
 
 <h1 id = 'tec'>🛠 Tecnologias </h1
   
@@ -32,8 +32,14 @@
 <h3>WEB</h3>
 
 <p align="center">
- <img widht = '500'  src = "./src/Assents/gravacaoNetflix.gif"/>
+ <img widht = '400'  src = "./src/Assents/GravacaoWebNetflix.gif"/>
 </p>
+<h3>MOBILE</h3>
+
+<p align="center">
+ <img height = '450'  src = "./src/Assents/GravacaoMobileNetflix.gif"/>
+</p>
+
 
 <h1>🚀  Como executar o projeto</h1>
 

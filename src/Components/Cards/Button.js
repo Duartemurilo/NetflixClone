@@ -1,8 +1,8 @@
 import React from 'react'
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
-import PlayArrowIcon from '@material-ui/icons/PlayArrow'
-import VideoLibrarySharp from '@material-ui/icons/VideoLibrarySharp'
-import SubtitlesIcon from '@material-ui/icons/Subtitles'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary'
+import SubtitlesIcon from '@mui/icons-material/Subtitles'
 import { Button } from '../../Styles/Cards/CardsDetail'
 
 const ButtonsCard = ({ type, handleLanguage }) => {
@@ -11,7 +11,7 @@ const ButtonsCard = ({ type, handleLanguage }) => {
       case 'rank':
         return (
           <Button>
-            <ThumbUpAltIcon />
+            <ThumbUpIcon />
             <p>Classificar este Titulo</p>
           </Button>
         )
@@ -26,7 +26,7 @@ const ButtonsCard = ({ type, handleLanguage }) => {
       case 'episodios':
         return (
           <Button>
-            <VideoLibrarySharp />
+            <VideoLibraryIcon />
             <p>Episodios e mais </p>
           </Button>
         )
@@ -34,7 +34,7 @@ const ButtonsCard = ({ type, handleLanguage }) => {
         return (
           <Button onClick={handleLanguage}>
             <SubtitlesIcon />
-            <p>Indioma e legendas </p>
+            <p>Idiomas e legendas </p>
           </Button>
         )
       case 'assistir':
